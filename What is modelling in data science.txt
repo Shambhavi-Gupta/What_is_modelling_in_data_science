@@ -1,0 +1,50 @@
+A data model describes information in a systematic way that allows it to be stored and retrieved efficiently in a Relational Database Management System (RDBMS), such as SQL Server, MySQL, or Oracle. The model can be thought of as a way of translating the logic of accurately describing things in the real-world and the relationships between them into rules that can be followed and enforced by computer code.
+
+Something as essential as a sales transaction is broken down into related groups of data points, describing the customer, the seller, the item sold, and the payment mechanism. These qualities exist organically in the real world, but must be described discretely and systematically in order to be stored and retrieved accurately from a database.
+
+Data modeling is also performed to help organizations ensure that they are collecting all the necessary items of information in the first place. For instance, using the previous example, if transactions were recorded without the date on which they occurred, it would be impossible to enforce certain return policies. A data model helps organizations capture all the points of information necessary to perform operations and enact policy based on the data they collect.
+
+Data Scientists Strive to Build the Perfect Digital Representation of Real Data
+As organizations become more complex and as data scientists become more ambitious at collecting large and broad data sets, modeling has become both more difficult and more crucial. Building a database around a sales transaction can, by itself, involve a data model with hundreds of discrete fields and dozens of entities. Put that small part of your average corporate function into a big enterprise resource planning (ERP) system, and suddenly the model explodes into hundreds of entities and thousands of fields, all interrelated and possibly dependent on one another.
+
+Data modeling is sometimes as much art as science. Following the rules of normalization can be straightforward, but knowing when to break them, and what data to optimize for later access, takes perception beyond simply applying rules.
+
+The Stages of Data Modeling
+
+There are three stages or types of data model (called schemas):
+
+Conceptual – This is the first step in the modeling process, which imposes a theoretical order on data as it exists in relationship to the entities being described, often real-world artifacts or concepts.
+Logical – Taking the semantic structure built at the conceptual stage, the logical modeling process attempts to impose order by establishing discrete entities, key values, and relationships in a logical structure that is brought into at least 4th normal form (4NF).
+Physical – Actually not physical at all, but it would be confusing to use “logical” twice, this step breaks the data down into the actual tables, clusters, and indexes required for the data store.
+There are many possible visual representations of data models, but the primary one used in database design today is the classic entity-relationship model. This is simply a flowchart of boxes, describing entities with their attendant data points inside, and lines between the boxes, describing the relationships between entities.
+
+Modelers might find themselves using other specialized modeling methodologies on specific projects, however, and data scientists will be expected to learn several of them, including:
+
+Bachman Diagrams
+Object-Role modeling
+Zachman Frameworks
+Normalization
+
+Data normalization is the process of structuring a schema to avoid dependencies that create anomalies when new data is inserted or updated. The idea behind normalization is to ensure that data can always be queried reliably. Most commonly, this involves reducing data stores to a point where no duplicate data is contained within them. By ensuring discrete storage of data points, the model can offer more efficient storage of information while avoiding scenarios where contradictory data might be stored.
+
+Although in terms of data storage a normalized model is inherently the most efficient, for some operational purposes, a fully normalized database can result in sub-par performance. So data modelers commonly also engage in strategic denormalization, breaking normalization rules to optimize certain query or update processes to speed up the RDBMS.
+
+Data Modeling Enters New Frontiers With Non-Relational Databases
+Very large datasets have thrown something of a wrench into the dominance of RDBMSs, whether the data being stored can easily be modeled relationally or not. The RDBMS store paradigm relies on the database system itself to maintain internal consistency and coherence of the data being held in it, and while the relational model, when properly applied, can achieve this, the process comes with overhead. When millions or trillions of data points are being stored, the price of this internal consistency can bring performance grinding to a halt.
+
+NoSQL databases such as MongoDB, Cassandra, and HBase have been one of the most promising industry answers to this problem. These use sometimes radically de-normalized data stores with the sole objective to improve performance. They rely on calling code and queries to handle the sort of consistency, integrity, and concurrency that come baked-in to the RDBMS approach, offering blinding speed and scalability over ease-of-use.
+
+To do this, they adopt simplistic data stores such as:
+
+Key-value stores
+Document stores
+Graphs
+Modeling these types of stores is a significant departure from the RDBMS method. Data scientists may start from the result side of the process, asking themselves, “What question am I trying to answer?” instead of “What data do I need to store?” They’ll completely disregard duplication of data and have to plan to handle concurrency conflicts and other integrity issues on the output end rather than in the design itself. They might choose to aggregate data rather than breaking it down discretely, shoving complete sales transactions into a flat document store, for instance.
+
+NoSQL data modeling puts your education to the test as you put to use advanced techniques such as:
+
+Atomic updates
+Dimensionality reduction
+Inverted search patterns
+Tree aggregation
+Understanding these techniques, and the capabilities offered by NoSQL, allow data scientists to make the best choices for what type of data store to use and how to model it. In almost every case, data scientists in the real world will end up using a combination of RDBMSs and NoSQL or other exotic data sources as a daily part of their work. Understanding how to apply the models that allow those systems to record a picture of the real world is the only thing that makes the job even remotely possible.
